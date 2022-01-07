@@ -56,9 +56,9 @@ function sum([arg1, arg2]) {
 }
 ```
 
-Let's note that the arguments `arg1` and `arg2` can be a different data type than the one we want. That's why it's necessary to convert them into a suitable one. If it's not done for the program each number will be just a string with which we can't do operations arithmetic operations.
+Let's note that the arguments `arg1` and `arg2` can be a different data type than the one we want. That's why it's necessary to convert them into a suitable one. If it's not done for the program each number will be just a string with which we can't do arithmetic operations.
 
-####Example: Calculating a Square Area with Length of a Side a
+#### Example: Calculating a Square Area with Length of a Side `a`
 
 For example, let's look at the following function which reads an integer from the console, multiplies it by itself (squares it), and prints the result from the multiplication. That's how we can calculate square area by side length:
 

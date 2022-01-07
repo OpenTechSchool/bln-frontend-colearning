@@ -308,7 +308,7 @@ function printTrapezoidArea([arg1, arg2, arg3]) {
 }
 ```
 
-This function should work with both integers and floating numbers, use `**parseFloat()**`. If we start the function and enter values for sides: 3, 4, and 5, we will obtain the following result:
+This function should work with both integers and floating numbers, use **`parseFloat()`**. If we start the function and enter values for sides: 3, 4, and 5, we will obtain the following result:
 
 ```js
 printTrapezoidArea([3, 4, 5]); // Trapezoid area = 17.5

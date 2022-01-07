@@ -4,17 +4,17 @@ In this lesson we are going to get familiar with the following concepts and prog
 
     👉 How to work with data types and variables which we need when 
     
-    👉 processing numbers and strings.
+    👉 Processing numbers and strings.
 
     👉 How to print a result on the screen.
 
-    👉 How to read a custom input.
+    👉 How to read a custom input
 
     👉 How to do simple arithmetic operations: addition, 
     
     👉 subtraction, multiplication, division, concatenate strings.
 
-    👉 How to round numbers.
+    👉 How to round numbers
 
 ### Calculations in Programming
 
@@ -58,7 +58,7 @@ function sum([arg1, arg2]) {
 
 Let's note that the arguments `arg1` and `arg2` can be a different data type than the one we want. That's why it's necessary to convert them into a suitable one. If it's not done for the program each number will be just a string with which we can't do operations arithmetic operations.
 
-#####Example: Calculating a Square Area with Length of a Side a
+####Example: Calculating a Square Area with Length of a Side a
 
 For example, let's look at the following function which reads an integer from the console, multiplies it by itself (squares it), and prints the result from the multiplication. That's how we can calculate square area by side length:
 
@@ -196,4 +196,237 @@ console.log(`${a} + ${a} = ${a + a}`);
 The result is:
 ```bash
 1 + 1 = 2
+```
+
+####Arithmetic Operations
+
+Let's examine the basic arithmetic operations in programming.
+#### Summing Numbers **(operator +)**
+
+We can sum numbers using the operator +:
+
+```js
+let a = 8;
+let b = 6;
+let sum = a + b; // the result is 14
+```
+#### Subtracting Numbers **(operator -)**
+
+Subtracting numbers is done using the **-** operator:
+
+```js
+function substractNumbers([arg1, arg2]) {
+    let a = parseInt(a);
+    let b = parseInt(b);
+    let result = a - b;
+    console.log(result);
+}
+```
+Let we check the result of the execution of this program (with numbers 10 and 3):
+
+```js
+substractNumbers([10, 3]); // 7
+```
+#### Multiplying Numbers (operator *)
+
+For multiplication of numbers we use the `*` operator:
+```js
+let a = 5;
+let b = 7;
+let product = a * b; // 35
+```
+
+#### Dividing Numbers (operator /)
+
+Dividing numbers is done using the / operator.
+
+Note 🛑 
+👉 Float numbers divided by `0` do not cause an exception and the result is `+/- `infinity or the special value Infinity.
+
+Here are a few examples with the division operator:
+```js
+console.log(10 / 2.5); // Result: 4
+console.log(10 / 4);   // Result: 2.5
+console.log(10 / 6);   // Result: 1.6666666666666667
+
+console.log(a / 0);   // Result: Infinity
+console.log(-a / 0);  // Result: -Infinity
+console.log(0 / 0);   // Result: NaN (Not a Number), i.e. the result
+                      // The operation  hasn't a valid numeric value
+```
+#### Concatenating Text and Numbers
+
+Besides summing up numbers, the operator + is also used for joining pieces of text (concatenation of two strings one after another). **In programming, joining two pieces of text is called "concatenation".** Here is how we can concatenate a text with a number by the `+ ` operator:
+
+```js
+let firstName = "Anna";
+let lastName = "Tomson";
+let age = 23;
+let str = firstName + " " + lastName + " @ " + age; 
+console.log(str);  // Anna Tomson @ 19
+```
+Here is another example:
+
+```js
+let a = 1.5;
+let b = 2.5;
+let sum = "The sum is: " + a + b;
+console.log(sum);  // The sum is: 1.52.5
+```
+
+Do you notice anything? Maybe you expected the numbers `a` and `b` to sum? The **concatenation** works from **left** to **right** and the above result is correct. 
+🛑 **If we want to sum the numbers, we will have to use brackets to change the order of operations**:
+
+```js
+let a = 1.5;
+let b = 2.5;
+let sum = "The sum is: " + (a + b);
+console.log(sum);  // The sum is: 4
+```
+
+#### Numerical Expressions
+
+👉 In programming numerical expressions can be calculated, for example:
+
+```js
+let expr = (3 + 5) * (4 – 2);
+```
+
+👉 The standard rule for priorities of arithmetic operations is applied: multiplying and dividing are always done before adding and subtracting. In the case of an expression in brackets, it is calculated first but we already know all of that from the school math.
+
+Example: 👉 Calculate Trapezoid Area 🤔 
+
+✍️ write a program that inputs the lengths of the two bases of a trapezoid and its height (one floating-point number per line) and calculates the trapezoid area by the standard math formula:
+
+```js
+function printTrapezoidArea([arg1, arg2, arg3]) {
+    let b1 = parseFloat(arg1);
+    let b2 = parseFloat(arg2);
+    let h = parseFloat(arg3);
+    let area = (b1 + b2) * h / 2;
+    console.log("Trapezoid area = " + area);
+}
+```
+
+This function should work with both integers and floating numbers, use `**parseFloat()**`. If we start the function and enter values for sides: 3, 4, and 5, we will obtain the following result:
+
+```js
+printTrapezoidArea([3, 4, 5]); // Trapezoid area = 17.5
+```
+
+####  🤔 What the Hack is Rounding?
+
+There are moments when we work with floating numbers,and it's necessary to bring them to **integers**. This bringing is named **rounding**. JavaScript provides  several methods for rounding numbers:
+
+- **Math.ceil(…)** - rounding up to next (greater) integer:
+```js
+    let up = Math.ceil(45.15); // up = 46
+```
+
+- **Math.floor(…)** - rounding down to previous (less) integer:
+  ```js
+  let down = Math.floor(45.67);    // down = 45
+  ```
+
+- **Math.trunc(…)** - cutting the decimal places:
+  
+```js
+let trunc = Math.trunc(45.67); // trunc = 45
+```
+- **Math.round(…)** - rounding is done as a basic rule for rounding numbers - if the decimal part is less than 5, rounding is to the previous number and if it's greater than 5 - to the next:
+```js
+    Math.round(5.439); // 5
+    Math.round(5.539); // 6
+```
+- **.toFixed**([number of characters after the decimal point]) - rounding to the closest number:
+
+```js
+    (123.457).toFixed(2);     // 123.47
+    (123).toFixed(2);         // 123.00
+    (123.457).toFixed(0);     // 123
+    (123.512).toFixed(0);     // 124
+```
+🤔 #### How to find the Circle Area parameter
+
+
+Let's write a function that receives an input of the radius r of a circle and calculates the area and the perimeter of the circle.
+
+Formulas:
+
+   > Area = π * r * r
+   >Perimeter = 2 * π * r
+   >π ≈ 3.14159265358979323846…
+
+```js
+function calculateCircleAreaAndPerimeter([arg1]) {
+    let r = parseInt(arg1);
+    console.log("Area = " + Math.PI * r * r); 
+    // Math.PI - Built-in JavaScript constant for the value of the number π
+    console.log("Perimeter = " + 2 * Math.PI * r);
+}
+
+```
+Let's call the function with radius `r = 10`:
+
+```js
+calculateCircleAreaAndPerimeter([10])
+```
+
+🛑
+There are no parameters or arguments for the Math.PI property. 
+The Math.PI property returns the mathematical constant π (pi) which has an approximate value of 3.141592653589793.
+Note
+
+The Math.PI property is a property of the Math object and not a math function. 
+
+```js
+console.log( Math.PI );
+// Math.PI with circle:
+
+// 1. Circle surface area:
+var radius = 5;
+var area = Math.PI * Math.pow(radius, 2);
+console.log( area ); // 78.53981633974483
+
+// 2. Circle circumference:
+var radius = 5;
+var circumference = 2 * Math.PI * radius;
+console.log( circumference ); // 31.41592653589793
+```
+**PI** is a `static property` that keeps **`π`** number what is one of the most important mathematical constants.
+
+🤔 2D Rectangle Area
+
+The rectangle is given with the coordinates of two of its opposite angles. Calculate its area and perimeter :
+
+rectangleArea
+
+In this problem, we have to consider that if we subtract the smaller `x` from the bigger `x` , we will obtain the length of the rectangle. Identically, if we subtract the smaller `y` from the bigger `y`, , we will obtain the height of the rectangle. 
+🤔 What is left is to multiply both sides. 
+
+👇 The example bellow shows an implementation of the described logic:
+
+```js
+function calculateRectangleArea([arg1, arg2, arg3, arg4]) {
+    let x1 = parseFloat(arg1);
+    let y1 = parseFloat(arg2);
+    let x2 = parseFloat(arg3);
+    let y2 = parseFloat(arg4);
+
+// Calculating the sides of the rectangle:
+    let width = Math.max(x1, x2) - Math.min(x1, x2);
+    let height = Math.max(y1, y2) - Math.min(y1, y2);
+
+    console.log(width * height);
+    console.log(2 * (width + height));
+}
+```
+
+We use the method `Math.max(x1, x2)` to find the higher value from `x1` and `x2` and identically `Math.min(y1, y2)` to find the lower of both values.
+
+👇 When the function with testing values is called from the coordinate system:
+
+```js
+calculateRectangleArea([60, 20, 10, 50]); // 1500
+                                          // 160
 ```

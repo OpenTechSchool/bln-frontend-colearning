@@ -1,7 +1,7 @@
  ### Loops 
 Objectives
 
-In this lesson, we will introduce the repeat blocks of commands, also known as "loops". We will write a set of loops, using the for operator in its simplest form. Finally, we will solve a few practical problems that require repetition of commands, using loops.
+In this lesson, we will introduce the repeat blocks of commands, also known as "loops". We will write a set of loops, using the `for` operator in its simplest form. Finally, we will solve a few practical problems that require repetition of commands, using loops.
 
 In programming, we often need to execute a block of commands multiple times. To do that we use **loops**. Let's look at the example of a **`for`** loop, which will loop through the numbers from 1 to 10 and print each one:
 
@@ -33,6 +33,9 @@ A for loop often circles 1 to n times (for example 1 to 10). The goal is to loop
 
  ✍️ Write a program that finds all numbers ending in 7 in the range [1 … 1000]. 
 
-### Task Three:  All Latin Letters
+#### Task Three:  All Latin Letters
 
 Write a program that prints the letters from the alphabet: a, b, c, …, z.
+
+
+![Gif](https://media.giphy.com)
